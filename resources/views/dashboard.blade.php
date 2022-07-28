@@ -20,8 +20,11 @@
             <div class="setting-items">
                 <ul>
                     @if(Auth::user())
-                    <li @click.prevent="checkAuthAndGoToNewRoute('user-profile')">
-                        <a href="#">Profile</a>
+                    <li>
+                        <a href="/">Result</a>
+                    </li>
+                    <li>
+                        <a href="/profile">Profile</a>
                     </li>
                     <li>
                         <a href="/signout">Sign Out</a>

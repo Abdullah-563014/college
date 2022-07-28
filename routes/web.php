@@ -31,4 +31,6 @@ Route::get('/signout', [AuthController::class, 'signOut']);
 Route::get('load-user-info', [UserController::class, 'getUserInfo']);
 Route::get('/result-list', [UserController::class, 'resultListPage'])->middleware("auth.check.middleware");
 Route::get('/get-result-list', [UserController::class, 'getResultList']);
-
+Route::get('/profile', [UserController::class, 'profilePage'])->middleware("auth.check.middleware");
+Route::post('update-user-profile-picture', [UserController::class, 'updateUserProfilePictureInfo']);
+Route::post('update-user-profile-info', [UserController::class, 'updateUserProfileInfo']);
