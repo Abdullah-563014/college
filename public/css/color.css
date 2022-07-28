@@ -1,0 +1,15 @@
+:root{
+    --main-theme-color:#1B2432;
+    --theme-second-color:#FF5B5B;
+    --theme-bg:#f8f8f8;
+    --btn-hover-color:#1B2432;
+    --sub-title-color:#868C94;
+    --paragraph-color:#5F666F;
+    --heading-color:#1B2432;
+    --light-color:#ffffff;
+    --dark-color:#000000;
+    --btn-bg:#FF5B5B;
+}
+h1, h2, h3, h4, h5, h6{
+    color: var(--heading-color);
+}
