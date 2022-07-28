@@ -41,11 +41,41 @@ class UserController extends Controller
 
         $userInfo = DB::table("users")->where([["id", "=", Auth::user()->id]])->orderBy("id", "DESC")->first();
         $result["status"] = "success";
-        $result["msg"] = "product founded successfully";
+        $result["msg"] = "user info founded successfully";
         $result["data"] = $userInfo;
 
         return $result;
     }
+
+    public function resultListPage()
+    {
+        $data = array();
+        $data['title'] = 'Result List - ' . siteTitle();
+        $data['description'] = $data['ogdescription'] = siteTagline();
+        $data['keywords'] = siteKeywords();
+        $data['image'] = siteLogo();
+        $data['imageType'] = 'image/png';
+        $data['url'] = siteUrl();
+        $data['updated_time'] = strtotime('- 1 day', time());
+        return view('result', $data);
+    }
+
+
+    public function getResultList()
+    {
+        $result = [];
+        $result["status"] = "failed";
+        $result["msg"] = "failed to load result list.";
+        $result["data"] = [];
+
+        $resultList = DB::table("results")->orderBy("id", "DESC")->get();
+        $result["status"] = "success";
+        $result["msg"] = "result list founded successfully";
+        $result["data"] = $resultList;
+
+        return $result;
+    }
+
 
     
 

@@ -21,7 +21,7 @@ require('helper.php');
 */
 
 
-Route::get('/', [UserController::class, 'home'])->middleware("auth.check.middleware");
+Route::get('/', [UserController::class, 'resultListPage'])->middleware("auth.check.middleware");
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login-validation', [AuthController::class, 'loginValidation']);
 Route::get('/registration', [AuthController::class, 'registration']);
@@ -29,4 +29,6 @@ Route::post('/registration-validation', [AuthController::class, 'registrationVal
 Route::get('/signout', [AuthController::class, 'signOut']);
 
 Route::get('load-user-info', [UserController::class, 'getUserInfo']);
+Route::get('/result-list', [UserController::class, 'resultListPage'])->middleware("auth.check.middleware");
+Route::get('/get-result-list', [UserController::class, 'getResultList']);
 

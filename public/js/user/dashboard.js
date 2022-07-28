@@ -9,6 +9,7 @@ const userDashboardPage = {
         setTimeout(() => {
             enableCustomSelect();
         }, 500);
+        thisClass.headerResponsive();
     },
     getUserInfo() {
         const thisClass = this;
@@ -28,6 +29,11 @@ const userDashboardPage = {
         $(".user_dashboard_page .header-right .user").on("click", function () {
             $(".user_dashboard_page .header-right .setting-items").fadeToggle();
         });
+    },
+    headerResponsive() {
+        let headerHeight = '67px';
+        headerHeight = $('.responsiveHeader').outerHeight();
+        $('.mainContent').css({ 'min-height': 'calc(100vh - ' + headerHeight + 'px)', 'position': 'relative', 'top': headerHeight + 'px' });
     },
 
 }
